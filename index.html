@@ -21,6 +21,7 @@
       <a href="#porque">Por que usar</a>
       <a href="#planos">Planos</a>
     </nav>
+    <a class="btn small-btn" href="#contato">Pedir demonstração</a>
     <button class="theme" id="theme" type="button" aria-label="Alternar tema claro e escuro"><span aria-hidden="true">◐</span></button>
   </div>
 </header>
@@ -34,8 +35,8 @@
     <p class="tagline">Descubra a falha antes que o seu cliente descubra.</p>
     <p class="lead">Ele testa o seu programa de forma <strong>estática</strong> e <strong>dinâmica</strong>, automaticamente, e diz se a versão está segura para entrega. Sem montar ferramentas, sem testar na mão.</p>
     <div class="cta">
-      <a class="btn" href="#porque">Por que usar</a>
-      <a class="btn ghost" href="#como">Como funciona</a>
+      <a class="btn" href="#contato">Pedir demonstração</a>
+      <a class="btn ghost" href="#porque">Por que usar</a>
     </div>
   </div>
 </section>
@@ -172,6 +173,40 @@
         <p class="price">R$ 600<small>/mês</small></p>
         <p>Tudo ilimitado.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap contact">
+    <div>
+      <h2>Veja o AutoTeste analisando o seu programa</h2>
+      <p class="sub">Deixe seus dados e a equipe entra em contato para mostrar como o AutoTeste encontra erros e vulnerabilidades na sua versão.</p>
+    </div>
+
+    <!-- FORMULÁRIO FALSO: o script.js só mostra a mensagem de sucesso, nenhum dado é enviado -->
+    <form class="form" id="form" novalidate>
+      <label>Nome
+        <input type="text" name="nome" autocomplete="name" required placeholder="Seu nome">
+      </label>
+      <label>E-mail
+        <input type="email" name="email" autocomplete="email" required placeholder="voce@empresa.com">
+      </label>
+      <fieldset>
+        <legend>Você é</legend>
+        <label class="opt"><input type="radio" name="tipo" value="dev" checked> Desenvolvedor</label>
+        <label class="opt"><input type="radio" name="tipo" value="empresa"> Empresa</label>
+      </fieldset>
+      <button class="btn" type="submit">Pedir demonstração</button>
+      <p class="error" id="erro" role="alert" hidden></p>
+      <p class="note">Formulário de demonstração do projeto: nenhum dado é enviado.</p>
+    </form>
+
+    <div class="done" id="ok" role="status" hidden>
+      <span aria-hidden="true">✱</span>
+      <h3>Pedido recebido!</h3>
+      <p id="ok-msg">Em breve a equipe entra em contato.</p>
+      <button class="btn ghost" type="button" id="again">Enviar outro pedido</button>
     </div>
   </div>
 </section>
