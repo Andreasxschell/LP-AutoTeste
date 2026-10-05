@@ -101,11 +101,6 @@ nav a:hover{border-color:var(--navy)}
 .shot-bar{display:flex;gap:.45rem;padding:.8rem 1rem;border-bottom:2px solid var(--line);background:var(--card)}
 .shot-bar i{width:.75rem;height:.75rem;border-radius:50%;background:var(--navy);opacity:.55}
 .shot img{display:block;width:100%;height:auto}
-.shot-box{aspect-ratio:16/9;display:grid;place-content:center;justify-items:center;gap:.4rem;text-align:center;padding:1rem;color:var(--muted);
-  background:repeating-linear-gradient(135deg,transparent 0 14px,color-mix(in srgb,var(--line) 8%,transparent) 14px 15px)}
-.shot-box span{font-size:3rem;color:var(--navy);line-height:1}
-.shot-box p{font-weight:700;color:var(--ink)}
-.shot-box small{font-size:.9rem}
 
 /* ---------- Planos ---------- */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:2.6rem;align-items:stretch}
@@ -155,3 +150,21 @@ footer{padding:4.5rem 0 3rem;text-align:center;border-top:2px solid var(--line)}
   .row span:nth-child(2)::before{content:"Hoje: "}
   .row span:last-child::before{content:"AutoTeste: ";font-weight:700}
 }
+
+/* ---------- Visual extra ---------- */
+.hero{position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"✱";position:absolute;font:900 22rem/1 Fraunces,serif;color:var(--navy);opacity:.07;pointer-events:none}
+.hero::before{left:-4rem;top:-3rem}
+.hero::after{right:-5rem;bottom:-6rem;font-size:30rem}
+.hero .wrap{position:relative;z-index:1}
+.card,.aud,.plan{transition:transform .2s}
+.card:hover,.aud:hover{transform:translateY(-4px)}
+h2{position:relative}
+section>.wrap>h2::before{content:"✱";display:block;font-size:1.4rem;margin-bottom:.8rem;color:var(--ink)}
+
+
+/* Rodapé em destaque */
+footer{background:var(--navy);color:var(--on-navy);border-top:0;padding:5.5rem 0 3rem}
+footer .quote{color:var(--on-navy);font-size:clamp(1.7rem,4.6vw,2.8rem);max-width:24ch}
+footer .team li{background:color-mix(in srgb,var(--on-navy) 16%,transparent);color:var(--on-navy)}
+footer .small{color:var(--on-navy);opacity:.8}
