@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AutoTeste — Teste estático e dinâmico, automático</title>
+<meta name="description" content="O AutoTeste testa seus programas de forma estática e dinâmica, automaticamente, para encontrar erros e vulnerabilidades antes da entrega.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="logo" href="#inicio" aria-label="AutoTeste, início">Auto<span>Teste</span><i aria-hidden="true">✱</i></a>
+    <nav aria-label="Principal">
+      <a href="#problema">Problema</a>
+      <a href="#como">Como funciona</a>
+      <a href="#analises">SAST e DAST</a>
+      <a href="#porque">Por que usar</a>
+      <a href="#planos">Planos</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="Alternar tema claro e escuro"><span aria-hidden="true">◐</span></button>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="chip">2º Hackathon IFC Concórdia</p>
+    <h1>AutoTeste</h1>
+    <p class="tagline">Descubra a falha antes que o seu cliente descubra.</p>
+    <p class="lead">Ele testa o seu programa de forma <strong>estática</strong> e <strong>dinâmica</strong>, automaticamente, e diz se a versão está segura para entrega. Sem montar ferramentas, sem testar na mão.</p>
+    <div class="cta">
+      <a class="btn" href="#porque">Por que usar</a>
+      <a class="btn ghost" href="#como">Como funciona</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Automatiza, analisa, identifica, organiza">
+  <div class="wrap"><span>Automatiza</span><i>✱</i><span>Analisa</span><i>✱</i><span>Identifica</span><i>✱</i><span>Organiza</span></div>
+</div>
+
+<section id="problema">
+  <div class="wrap">
+    <h2>Testar bem dá trabalho</h2>
+    <p class="sub">Quando tudo é manual, a equipe perde tempo e as falhas chegam ao usuário. Corrigir depois da entrega custa mais do que achar antes.</p>
+    <div class="cards">
+      <article class="card"><h3>Testes manuais consomem tempo</h3><p>Repetir os mesmos testes a cada versão atrasa a entrega.</p></article>
+      <article class="card"><h3>Erros são difíceis de achar</h3><p>Sem resultados organizados, o debugging vira uma caça demorada.</p></article>
+      <article class="card"><h3>Segurança fica de fora</h3><p>Vulnerabilidades só aparecem depois que o programa já está em uso.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="como" class="alt">
+  <div class="wrap">
+    <h2>Do projeto ao resultado, em um só lugar</h2>
+    <p class="sub">Você cadastra o programa e o AutoTeste executa as análises sozinho.</p>
+    <ol class="steps">
+      <li><b>Projeto</b><span>Cadastre o programa e suas versões.</span></li>
+      <li><b>Teste</b><span>As análises rodam automaticamente.</span></li>
+      <li><b>Análise</b><span>Erros e vulnerabilidades são identificados.</span></li>
+      <li><b>Resultado</b><span>Tudo organizado, com uma decisão clara.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="analises">
+  <div class="wrap">
+    <h2>Duas formas de encontrar erros</h2>
+    <p class="sub">O AutoTeste combina as duas análises para cobrir o que uma sozinha deixaria passar.</p>
+
+    <div class="tabs" role="tablist" aria-label="Tipo de análise">
+      <button role="tab" id="tab-sast" aria-selected="true" aria-controls="panel-sast" type="button">Estática (SAST)</button>
+      <button role="tab" id="tab-dast" aria-selected="false" aria-controls="panel-dast" tabindex="-1" type="button">Dinâmica (DAST)</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-sast" aria-labelledby="tab-sast">
+      <div>
+        <h3>Lê o código sem executá-lo</h3>
+        <p>A análise estática percorre o código-fonte do seu programa e aponta falhas, más práticas e pontos vulneráveis ainda na escrita.</p>
+      </div>
+      <ul>
+        <li>Encontra problemas cedo, antes de rodar o programa</li>
+        <li>Mostra onde o erro está no código</li>
+        <li>Roda a cada nova versão, sem esforço manual</li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="panel-dast" aria-labelledby="tab-dast" hidden>
+      <div>
+        <h3>Testa o programa em funcionamento</h3>
+        <p>A análise dinâmica executa a aplicação e simula o uso real para descobrir falhas que só aparecem durante a execução.</p>
+      </div>
+      <ul>
+        <li>Encontra erros que o código sozinho não revela</li>
+        <li>Verifica o comportamento real da aplicação</li>
+        <li>Roda automaticamente, sem testes manuais</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Veja o AutoTeste em ação</h2>
+    <p class="sub">Painel com o Security Score, as releases analisadas e os problemas encontrados.</p>
+    <figure class="shot">
+      <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <img src="img/dashboard.png" alt="Painel do AutoTeste">
+    </figure>
+  </div>
+</section>
+
+<section id="porque">
+  <div class="wrap">
+    <h2>Por que usar o AutoTeste</h2>
+    <p class="sub">Ele resolve problemas diferentes para quem programa e para quem responde pelo resultado.</p>
+
+    <div class="audiences">
+      <article class="aud">
+        <p class="who">Para quem desenvolve</p>
+        <h3>Menos tempo testando, mais tempo programando</h3>
+        <ul>
+          <li><b>Nada para configurar em várias ferramentas.</b> Análise estática e dinâmica ficam na mesma plataforma.</li>
+          <li><b>Erros organizados.</b> Você vê o que foi encontrado e o que precisa corrigir primeiro, em vez de caçar o problema.</li>
+          <li><b>Testes que rodam sozinhos.</b> Cada nova versão é analisada sem repetir o trabalho manual.</li>
+        </ul>
+      </article>
+      <article class="aud">
+        <p class="who">Para a empresa</p>
+        <h3>Entregue com uma decisão fundamentada</h3>
+        <ul>
+          <li><b>Menos risco de entregar uma versão vulnerável.</b> Falhas de segurança aparecem antes de chegar ao cliente.</li>
+          <li><b>Uma resposta clara por versão.</b> Segura para entrega ou entrega bloqueada, com o Security Score que explica o motivo.</li>
+          <li><b>Custo previsível.</b> Assinatura mensal fixa, sem montar e manter uma equipe de testes manuais.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="compare" role="table" aria-label="Comparação entre testar sem e com o AutoTeste">
+      <div class="row head" role="row"><span role="columnheader"></span><span role="columnheader">Hoje, testando na mão</span><span role="columnheader">Com o AutoTeste</span></div>
+      <div class="row" role="row"><span role="rowheader">Execução</span><span role="cell">Alguém precisa lembrar e repetir os testes</span><span role="cell">Automática, a cada versão</span></div>
+      <div class="row" role="row"><span role="rowheader">Cobertura</span><span role="cell">Ferramentas separadas, ou nenhuma</span><span role="cell">Estática e dinâmica juntas</span></div>
+      <div class="row" role="row"><span role="rowheader">Resultados</span><span role="cell">Espalhados em planilhas e relatórios</span><span role="cell">Centralizados em um painel</span></div>
+      <div class="row" role="row"><span role="rowheader">Decisão de entrega</span><span role="cell">Baseada em achismo</span><span role="cell">Baseada em Security Score</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="planos" class="alt">
+  <div class="wrap">
+    <h2>Planos para empresas</h2>
+    <p class="sub">Assinatura mensal. Escolha pelo volume de análises.</p>
+    <div class="plans">
+      <article class="plan">
+        <h3>Básico</h3>
+        <p class="price">R$ 200<small>/mês</small></p>
+        <p>Todas as funções, exceto SAST e DAST.</p>
+      </article>
+      <article class="plan featured">
+        <h3>Profissional</h3>
+        <p class="price">R$ 400<small>/mês</small></p>
+        <p>SAST + DAST em até 50 análises por mês.</p>
+      </article>
+      <article class="plan">
+        <h3>Empresarial</h3>
+        <p class="price">R$ 600<small>/mês</small></p>
+        <p>Tudo ilimitado.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="quote">“Mais do que testar se funciona. É garantir que funciona com segurança.”</p>
+    <ul class="team" aria-label="Equipe">
+      <li>Andreas</li><li>Adria</li><li>Marya Reis</li><li>Ítalo</li><li>Lucas</li><li>Natália</li><li>Antoni</li><li>Kayron</li><li>Luana</li>
+    </ul>
+    <p class="small">Projeto do 2º Hackathon IFC Concórdia · Instituto Federal Catarinense, Campus Concórdia</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
