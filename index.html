@@ -184,7 +184,7 @@
       <p class="sub">Deixe seus dados e a equipe entra em contato para mostrar como o AutoTeste encontra erros e vulnerabilidades na sua versão.</p>
     </div>
 
-    <!-- FORMULÁRIO FALSO: o script.js só mostra a mensagem de sucesso, nenhum dado é enviado -->
+    <!-- Envio real: o script.js manda os dados por e-mail usando o serviço FormSubmit -->
     <form class="form" id="form" novalidate>
       <label>Nome
         <input type="text" name="nome" autocomplete="name" required placeholder="Seu nome">
@@ -197,9 +197,10 @@
         <label class="opt"><input type="radio" name="tipo" value="dev" checked> Desenvolvedor</label>
         <label class="opt"><input type="radio" name="tipo" value="empresa"> Empresa</label>
       </fieldset>
-      <button class="btn" type="submit">Pedir demonstração</button>
+      <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit" id="enviar">Pedir demonstração</button>
       <p class="error" id="erro" role="alert" hidden></p>
-      <p class="note">Formulário de demonstração do projeto: nenhum dado é enviado.</p>
+      <p class="note">Seus dados são enviados por e-mail à equipe do projeto.</p>
     </form>
 
     <div class="done" id="ok" role="status" hidden>
