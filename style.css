@@ -195,3 +195,15 @@ legend{font-weight:700;font-size:.95rem;margin-bottom:.5rem;padding:0}
 .done[hidden],.form[hidden],.error[hidden]{display:none}
 .done span{font-size:3rem;color:var(--navy);line-height:1}
 .done p{color:var(--muted)}
+
+/* ---------- Ajustes após conferir a captura ---------- */
+h2{max-width:26ch}
+#contato{background:var(--bg)}
+.theme span{display:block;width:1.1rem;height:1.1rem;border-radius:50%;border:2px solid currentColor;background:linear-gradient(90deg,currentColor 50%,transparent 50%);font-size:0;overflow:hidden}
+@media(max-width:560px){
+  .marquee{font-size:.95rem}
+  .marquee .wrap{gap:.3rem .8rem;flex-wrap:nowrap}
+}
+@media(max-width:560px){.marquee{font-size:.85rem}.marquee .wrap{gap:.3rem .6rem}}
+.honey{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.btn:disabled{opacity:.6;cursor:wait}
