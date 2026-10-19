@@ -55,6 +55,7 @@
     if (campo) campo.focus();
   }
 
+  /* aoTerminar(certo, motivo): motivo = 'rede' (sem resposta) ou texto do serviço */
   function enviar(dados, aoTerminar) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://formsubmit.co/ajax/' + EMAIL_DESTINO, true);
@@ -62,13 +63,15 @@
     xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = function () {
       if (xhr.readyState !== 4) return;
-      var certo = false;
-      if (xhr.status >= 200 && xhr.status < 300) {
-        try { certo = String(JSON.parse(xhr.responseText).success) === 'true'; } catch (e) { certo = true; }
+      if (xhr.status === 0) { aoTerminar(false, 'rede'); return; }
+      var resp = null;
+      try { resp = JSON.parse(xhr.responseText); } catch (e) {}
+      if (xhr.status >= 200 && xhr.status < 300 && (!resp || String(resp.success) === 'true')) {
+        aoTerminar(true); return;
       }
-      aoTerminar(certo);
+      aoTerminar(false, (resp && resp.message) ? resp.message : 'erro ' + xhr.status);
     };
-    xhr.onerror = function () { aoTerminar(false); };
+    xhr.onerror = function () { aoTerminar(false, 'rede'); };
     xhr.send(JSON.stringify(dados));
   }
 
@@ -97,11 +100,13 @@
       nome: nome.value.trim(),
       email: email.value.trim(),
       perfil: tipo === 'empresa' ? 'Empresa' : 'Desenvolvedor'
-    }, function (certo) {
+    }, function (certo, motivo) {
       botao.disabled = false;
       botao.textContent = 'Pedir demonstração';
       if (!certo) {
-        mostrarErro('Não foi possível enviar agora. Confira a internet e tente de novo.');
+        mostrarErro(motivo === 'rede'
+          ? 'Não consegui falar com o serviço de envio (formsubmit.co). Pode ser o navegador muito antigo ou uma rede que bloqueia o site.'
+          : 'O serviço de envio respondeu: ' + motivo);
         return;
       }
       var primeiro = nome.value.trim().split(' ')[0];
